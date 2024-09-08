@@ -27,7 +27,7 @@ const AdminPage = () => {
       setNewUserEmail('');
       setNewUserPassword('');
 
-      navigate('/admin');
+      navigate('/');
     } catch (error) {
       console.error('Registration failed:', error);
       setRegistrationMessage('Registration failed. Please try again.');

@@ -9,6 +9,7 @@ import AdminPage from './AdminPage';
 import UserPage from './UserPage';
 import AboutPage from './AboutPage';
 import PrivateRoute from './PrivateRoute'; // Import PrivateRoute
+import ErrorPage from './ErrorPage';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/user" element={<PrivateRoute element={UserPage} />} />
           <Route path="/admin" element={<PrivateRoute element={AdminPage} />} />
+          <Route path = '*' element={<ErrorPage />} />
         </Routes>
       </Router>
     </AuthProvider>
