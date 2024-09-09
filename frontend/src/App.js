@@ -9,6 +9,7 @@ import AdminPage from './AdminPage';
 import UserPage from './UserPage';
 import AboutPage from './AboutPage';
 import PrivateRoute from './PrivateRoute'; // Import PrivateRoute
+import Feedback from './feedback';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Navbar /> {/* Add Navbar component here */}
         <Routes>
           <Route path="/" element={<WelcomePage />} />
+          <Route path="/feedback" element={<Feedback />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/user" element={<PrivateRoute element={UserPage} />} />

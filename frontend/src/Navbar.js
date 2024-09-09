@@ -25,6 +25,9 @@ const Navbar = () => {
             <li>
               <Link to="/about" className="text-white hover:text-gray-400">About</Link> {/* About link */}
             </li>
+            <li>
+              <Link to="/feedback" className="text-white hover:text-gray-400">Feedback</Link>
+            </li>
             {user && (
               <li>
                 <button
