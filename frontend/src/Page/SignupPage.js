@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './AuthContext';
+import { useAuth } from '../Component/AuthContext';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignupPage = () => {
   const [loginId, setLoginId] = useState('');
@@ -13,10 +15,12 @@ const SignupPage = () => {
     e.preventDefault();
 
     if (loginId === 'user@gmail.com' && password === 'User@2024') {
-      loginUser({ role: 'user', email: loginId }); 
+      loginUser({ role: 'user', email: loginId });
+      toast.success('Login successful! Redirecting to User Page...');
       navigate('/user'); // Redirect to UserPage
     } else {
       setLoginError('Wrong email or password');
+      toast.error('Wrong email or password');
     }
   };
 
@@ -24,16 +28,18 @@ const SignupPage = () => {
     e.preventDefault();
 
     if (loginId === 'admin@gmail.com' && password === 'Admin@2024') {
-      loginUser({ role: 'admin', email: loginId }); 
+      loginUser({ role: 'admin', email: loginId });
+      toast.success('Login successful! Redirecting to Admin Page...');
       navigate('/admin'); // Redirect to AdminPage
     } else {
       setLoginError('Wrong email or password');
+      toast.error('Wrong email or password');
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div className="flex items-center justify-center min-h-screen bg-gray-900 p-4">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-auto">
         <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
         <form className="space-y-4">
           <div>
@@ -75,6 +81,7 @@ const SignupPage = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -1,15 +1,15 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './AuthContext';
-import Navbar from './Navbar';
-import WelcomePage from './WelcomePage';
-import SignupPage from './SignupPage';
-import AdminPage from './AdminPage';
-import UserPage from './UserPage';
-import AboutPage from './AboutPage';
-import PrivateRoute from './PrivateRoute'; // Import PrivateRoute
-import ErrorPage from './ErrorPage';
+import { AuthProvider } from './Component/AuthContext';
+import Navbar from './Component/Navbar';
+import WelcomePage from './Page/WelcomePage';
+import SignupPage from './Page/SignupPage';
+import AdminPage from './Page/AdminPage';
+import UserPage from './Page/UserPage';
+import AboutPage from './Page/AboutPage';
+import PrivateRoute from './Component/PrivateRoute'; // Import PrivateRoute
+import ErrorPage from './Page/ErrorPage';
 
 const App = () => {
   return (
