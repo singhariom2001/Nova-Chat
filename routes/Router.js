@@ -21,7 +21,7 @@ router.get('/auth/users', auth, isUser, (req, res) => {
     success: true,
     message: 'Welcome to the dashboard for Users'
    });
-})
+});
 
 
 
